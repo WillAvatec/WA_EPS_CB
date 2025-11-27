@@ -8,7 +8,6 @@ const PORT = 8000;
 app.use(express.json());
 
 // Connect router
-app.use(router);
 
 app.get("/test",(req,res)=>{
     console.log(req.body)
