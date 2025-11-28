@@ -17,3 +17,5 @@ Router.post("/session",session_post);
 Router.get("/location",(req,res)=> {
     res.send("Location")
 })
+
+module.exports = Router
