@@ -1,7 +1,4 @@
-import { replyMessage, sendList, sendMessage, sendReplyButtons } from "../utils.js";
-
-
-/** @type {import("express").RequestHandler} */
+const { replyMessage, sendList, sendMessage, sendReplyButtons } = require("../utils.js");
 
 // Confirm
 exports.session_get = (req, res) => {

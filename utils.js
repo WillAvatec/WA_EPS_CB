@@ -108,5 +108,5 @@ async function sendList(to) {
 async function sendReplyButtons(to) {
 }
 
-export { replyMessage, sendList, sendMessage, sendReplyButtons };
+module.exports= { replyMessage, sendList, sendMessage, sendReplyButtons };
 
