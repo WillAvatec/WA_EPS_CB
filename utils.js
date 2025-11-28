@@ -26,7 +26,7 @@ async function sendMessage(to,body) {
 
 async function replyMessage(to, body, messageId) {
     await axios(
-        'https://graph.facebook.com/v21.0/phone_number_id/messages',
+        'https://graph.facebook.com/v21.0/919988784524144/messages',
         {
             method: 'post',
             headers: {
@@ -49,7 +49,7 @@ async function replyMessage(to, body, messageId) {
 
 async function sendList(to) {
   await axios({
-    url: 'https://graph.facebook.com/v21.0/phone_number_id/messages',
+    url: 'https://graph.facebook.com/v21.0/919988784524144/messages',
     method: 'post',
     headers: {
       'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
