@@ -6,7 +6,7 @@ async function sendMessage(to,body) {
         {
             method:"post",
             headers:{
-                "Authorization":"Bearer " + process.env.ACCESS_TOKEN,
+                "Authorization":`Bearer ${process.env.ACCESS_TOKEN}`,
                 "Content-Type":"Content-Type: application/json"
             },
             data:JSON.stringify({
@@ -30,7 +30,7 @@ async function replyMessage(to, body, messageId) {
         {
             method: 'post',
             headers: {
-                'Authorization': `Bearer ${WHATSAPP_ACCESS_TOKEN}`,
+                'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
                 'Content-Type': 'application/json'
             },
             data: JSON.stringify({
@@ -52,7 +52,7 @@ async function sendList(to) {
     url: 'https://graph.facebook.com/v21.0/phone_number_id/messages',
     method: 'post',
     headers: {
-      'Authorization': `Bearer ${WHATSAPP_ACCESS_TOKEN}`,
+      'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
       'Content-Type': 'application/json'
     },
     data: JSON.stringify({
