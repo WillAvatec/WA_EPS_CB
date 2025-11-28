@@ -1,21 +1,19 @@
+const { session_get,session_post } = require("../controllers");
 const Router = require("express").Router();
 
 // Homepage
-Router.get("/",)
+Router.get("/",(req,res)=> {
+    res.send("El Punto del Sabor")
+})
 
 // WA EndPoints
 
-Router.post("/session",(req,res)=>{
-    const body = req.body;
-
-    const text = body.message;
-    const userId = body.from;
-
-    const answer = handleMessage(userId, text);
-
-    res.send(answer);
-})
+Router.get("/session",session_get);
+Router.post("/session",session_post);
 
 // Location Endpoints
 
-Router.get("/location")
+// TODO
+Router.get("/location",(req,res)=> {
+    res.send("Location")
+})
