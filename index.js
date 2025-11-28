@@ -11,7 +11,10 @@ app.use(express.json());
 app.get('/test', (req, res) => {
   const { 'hub.mode': mode, 'hub.challenge': challenge, 'hub.verify_token': token } = req.query;
 
-  console.log(req)
+  console.log("query",req.query)
+  console.log("body",req.body)
+  console.log("params",req.params)
+  console.log("header",req.headers)
 
   if (mode === 'subscribe' && token === verifyToken) {
     console.log('WEBHOOK VERIFIED');
