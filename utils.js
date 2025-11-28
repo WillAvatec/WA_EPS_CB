@@ -72,7 +72,7 @@ async function sendList(to) {
           text: 'Este es el footer'
         },
         action: {
-          button: 'Presiona para ver los botones',
+          button: 'Presiona aqui',
           sections: [
             {
               title: 'Plato Principal',
