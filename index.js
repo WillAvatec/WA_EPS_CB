@@ -24,6 +24,10 @@ app.get('/test', (req, res) => {
   }
 });
 
+app.post("/test", (req,res)=> {
+    console.log(req.body);
+})
+
 // Start server
 app.listen(PORT,()=>{
     console.log("Server started listening on port " + PORT);
