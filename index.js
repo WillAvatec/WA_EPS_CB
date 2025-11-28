@@ -10,6 +10,6 @@ app.use(express.json());
 app.use(router);
 
 // Start server
-app.listen(PORT,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("Server started listening on port " + process.env.PORT);
 });
