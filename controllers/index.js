@@ -65,6 +65,7 @@ exports.session_post = async (req,res) => {
     }
     
     console.log(JSON.stringify(messages, null, 2))
+    return res.status(200).send("Received")
   }
 
 }
