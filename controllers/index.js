@@ -1,4 +1,6 @@
+const { getSession } = require("../logic/state.js");
 const { replyMessage, sendList, sendMessage, sendReplyButtons } = require("../utils.js");
+const data = require("../menu.json")
 
 // Confirm
 exports.session_get = (req, res) => {
@@ -12,7 +14,7 @@ exports.session_get = (req, res) => {
   }
 };
 
-exports.session_post = (req,res) => {
+exports.session_post = async (req,res) => {
   const {entry} = req.body;
 
   if(!entry || entry.length === 0){
@@ -40,19 +42,16 @@ exports.session_post = (req,res) => {
   }
 
   if (messages) {
+
+    // check message user id
+    const userId = getSession(messages.from)
+
     // Handle received messages
-    if (messages.type === 'text') {
-      if (messages.text.body.toLowerCase() === 'hola') {
-        replyMessage(messages.from, 'Hola. Como estas?', messages.id)
-      }
-
-      if (messages.text.body.toLowerCase() === 'lista') {
-        sendList(messages.from)
-      }
-
-      if (messages.text.body.toLowerCase() === 'botones') {
-        sendReplyButtons(messages.from)
-      }
+    if (messages.type === "text" && userId.stage === "greet") {
+      await sendMessage(messages.from, data.greeting);
+      await sendList(messages.from);
+      userId.stage = "order"
+      return;
     }
 
     if (messages.type === 'interactive') {
