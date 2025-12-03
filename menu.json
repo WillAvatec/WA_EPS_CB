@@ -1,6 +1,7 @@
 {
+    "greeting":"Hola somos el Punto del Sabor, hoy tenemos:",
     "categories":{
-        "mains":["Lomo Saltado", "Chaufa Amazonico", "Aji de Gallina"],
+        "mains":["Lomo Saltado", "Chaufa Amazonico", "Aji de Gallina","Pachamanca a la Olla", "Estofado de Pollo", "Pollo a la Olla con Frejoles"],
         "starter":["Mazamorra de Melocoton", "Sopa de Frejol", "Papa a la Huancaina"]
     }
 }
